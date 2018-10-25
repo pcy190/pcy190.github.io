@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>Docker配置镜像源</title>
+      <link href="/2018/10/25/Docker%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+      <url>/2018/10/25/Docker%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<h1 id="设置镜像加速器"><a href="#设置镜像加速器" class="headerlink" title="设置镜像加速器"></a>设置镜像加速器</h1><p>由于“伟大的墙”的原因，在国内从Docker Hub中拉取镜像的速度可能会比较慢，国内很多云服务商都提供了镜像加速器服务，例如阿里、网易等等。</p><p>以Linux系统配置阿里云加速器为例，只需要将下面的命令复制到Linux的终端，以root用户的身份执行之后，就成功的配置了阿里云加速器了！</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#以root用户执行以下操作</span><br><span class="line">mkdir -p /etc/docker</span><br><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&apos;EOF&apos;</span><br><span class="line">&#123;#下面的URL可以替换为你自己的阿里云加速地址</span><br><span class="line">&quot;registry-mirrors&quot;: [&quot;https://jxus37ad.mirror.aliyuncs.com &quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2018/10/24/hello-world/"/>
       <url>/2018/10/24/hello-world/</url>
